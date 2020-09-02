@@ -15,13 +15,27 @@ import {
 
 export default () => {
     const [text, setText] = useState('text');
+    const [store, setStore] = useState([]);
+
     const onChangeHandler = event => {
         setText(event.target.value);
     };
+
     const fileSelectedHandler = event => {
-        const newFile = event.target.files;
-        console.log('newFile');
+        const file = event.target?.files[0];
+        const reader = new FileReader();
+        reader.onload = (
+            () => (e) => {
+                const result = e.target.result;
+                const getParsed = JSON.parse(result);
+                if (getParsed) setStore(getParsed);
+                console.log(getParsed);
+            }
+        )();
+
+        reader.readAsText(file);
     };
+
     return (
         <ControlPanel>
             <Banner>Cargo Planner</Banner>
@@ -30,7 +44,6 @@ export default () => {
                 <InputLabel htmlFor='staff' >
                     {text}
                     <TextInput
-                        // ref={fwdRef}
                         type="text"
                         onChange={onChangeHandler}
                         name='staff'
