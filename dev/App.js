@@ -15,6 +15,8 @@ const App = () => (
 const Wrapper = styled.div`
     background-color: transparent;
     min-height: 100vh;
+    width: 90%;
+    margin: 0 auto;
 `;
 
 export default App;
