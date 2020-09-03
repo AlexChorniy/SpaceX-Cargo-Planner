@@ -1,11 +1,11 @@
 import React from 'react';
 
-import CargoPlanner from './components/CargoPlanner';
-import GlobalStyles from './assets/global.styles';
+import CargoPlanner from './CargoPlanner';
+import GlobalStyles from '../assets/global.styles';
 
 import styled from "styled-components";
 
-const App = () => (
+export default () => (
     <Wrapper>
         <CargoPlanner />
         <GlobalStyles />
@@ -18,5 +18,3 @@ const Wrapper = styled.div`
     width: 90%;
     margin: 0 auto;
 `;
-
-export default App;

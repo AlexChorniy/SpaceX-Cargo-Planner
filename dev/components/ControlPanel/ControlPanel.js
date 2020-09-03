@@ -13,7 +13,7 @@ import {
     SaveButton,
 } from './controlPanelStyles';
 
-export default () => {
+export default ({ increment }) => {
     const [text, setText] = useState('text');
     const [store, setStore] = useState([]);
 
@@ -56,7 +56,7 @@ export default () => {
                     Load
                     <UploadElement onChange={fileSelectedHandler} />
                 </LoadButton>
-                <SaveButton>Save</SaveButton>
+                <SaveButton onClick={increment}>Save</SaveButton>
             </Buttons>
         </ControlPanel>
     )

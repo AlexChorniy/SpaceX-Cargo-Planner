@@ -4,6 +4,8 @@ import {
     DetailList,
 } from './detailListStyle';
 
-export default () => (
-    <DetailList />
+export default ({ number }) => (
+    <DetailList>
+        {number}
+    </DetailList>
 );
