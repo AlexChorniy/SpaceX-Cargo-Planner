@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 
-import { increment, decrement } from '../../../redux/actions';
+import { setParsedData } from '../../../redux/actions';
 import Component from './ControlPanel'
 
 export default connect(
     store => ({}),
-    { increment, decrement },
+    { setParsedData },
 )(Component);
 
 // export default connect(

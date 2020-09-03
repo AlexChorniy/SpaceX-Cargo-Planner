@@ -1,3 +1,1 @@
-export const increment = () => ({ type: 'INCREMENT' });
-export const decrement = () => ({ type: 'DECREMENT' });
-
+export const setParsedData = array => ({ type: 'SET_PARSED_DATA', payload: array });

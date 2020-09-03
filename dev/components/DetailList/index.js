@@ -1,2 +1,9 @@
+import { connect } from 'react-redux';
 import Component from './DetailList';
-export default Component;
+
+export default connect(
+    store => (
+        { data: store.dataHandler }
+    ),
+    {},
+)(Component);

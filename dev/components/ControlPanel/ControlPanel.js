@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { func } from "prop-types";
 
 import {
     ControlPanel,
@@ -13,9 +14,8 @@ import {
     SaveButton,
 } from './controlPanelStyles';
 
-export default ({ increment }) => {
+const CtrlPanel = ({ setParsedData }) => {
     const [text, setText] = useState('text');
-    const [store, setStore] = useState([]);
 
     const onChangeHandler = event => {
         setText(event.target.value);
@@ -27,9 +27,8 @@ export default ({ increment }) => {
         reader.onload = (
             () => (e) => {
                 const result = e.target.result;
-                const getParsed = JSON.parse(result);
-                if (getParsed) setStore(getParsed);
-                console.log(getParsed);
+                const getParsedData = JSON.parse(result);
+                if (getParsedData) setParsedData(getParsedData);
             }
         )();
 
@@ -56,8 +55,14 @@ export default ({ increment }) => {
                     Load
                     <UploadElement onChange={fileSelectedHandler} />
                 </LoadButton>
-                <SaveButton onClick={increment}>Save</SaveButton>
+                <SaveButton>Save</SaveButton>
             </Buttons>
         </ControlPanel>
     )
 };
+
+CtrlPanel.propTypes = {
+    setParsedData: func.isRequired,
+};
+
+export default CtrlPanel;

@@ -4,8 +4,11 @@ import {
     DetailList,
 } from './detailListStyle';
 
-export default ({ number }) => (
-    <DetailList>
-        {number}
-    </DetailList>
-);
+export default ({ data }) => {
+    console.log(data);
+    return (
+        <DetailList>
+            text
+        </DetailList>
+    )
+};
