@@ -58,33 +58,3 @@ export const Buttons = styled.div`
     display: flex;
     justify-content: space-evenly;
 `;
-
-export const LoadButton = styled.label`
-    height: 30px;
-    width: 60px;
-    text-align: center;
-    line-height: 30px;
-    font-weight: bold;
-    background-color: rosybrown;
-    border-radius: 5px;
-`;
-
-export const UploadElement = styled.input.attrs(() => ({
-    type: 'file',
-}))`
-    width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	position: absolute;
-	z-index: -1;
-`;
-
-export const SaveButton = styled.div`
-    height: 30px;
-    width: 60px;
-    text-align: center;
-    line-height: 30px;
-    background-color: darkmagenta;
-    font-weight: bold;
-    border-radius: 5px;
-`;

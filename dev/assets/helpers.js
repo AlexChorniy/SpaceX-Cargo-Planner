@@ -16,4 +16,7 @@ export const workWithLS = {
     setData(key, value) {
         localStorage.setItem(key, value);
     },
+    removeData(key) {
+        localStorage.removeItem(key);
+    }
 };

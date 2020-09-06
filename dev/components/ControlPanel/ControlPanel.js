@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { func } from "prop-types";
+import LoadButton from '../LoadButton';
+import SaveButton from '../SaveButton';
 
 import {
     ControlPanel,
@@ -9,30 +10,13 @@ import {
     InputLabel,
     TextInput,
     Buttons,
-    LoadButton,
-    UploadElement,
-    SaveButton,
 } from './controlPanelStyles';
 
-const CtrlPanel = ({ setParsedData }) => {
+const CtrlPanel = () => {
     const [text, setText] = useState('text');
 
     const onChangeHandler = event => {
         setText(event.target.value);
-    };
-
-    const fileSelectedHandler = event => {
-        const file = event.target?.files[0];
-        const reader = new FileReader();
-        reader.onload = (
-            () => (e) => {
-                const result = e.target.result;
-                const getParsedData = JSON.parse(result);
-                if (getParsedData) setParsedData(getParsedData);
-            }
-        )();
-
-        reader.readAsText(file);
     };
 
     return (
@@ -51,18 +35,11 @@ const CtrlPanel = ({ setParsedData }) => {
                 </InputLabel>
             </SearchContainer>
             <Buttons>
-                <LoadButton>
-                    Load
-                    <UploadElement onChange={fileSelectedHandler} />
-                </LoadButton>
-                <SaveButton>Save</SaveButton>
+                <LoadButton />
+                <SaveButton />
             </Buttons>
         </ControlPanel>
     )
-};
-
-CtrlPanel.propTypes = {
-    setParsedData: func.isRequired,
 };
 
 export default CtrlPanel;

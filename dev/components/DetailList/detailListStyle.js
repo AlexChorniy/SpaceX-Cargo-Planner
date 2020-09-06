@@ -17,7 +17,7 @@ export const Item = styled.li`
     font-style: normal;
     font-size: 14px;
     color: whitesmoke;
-    color: red;
+    color: ${({ color }) => color || 'white'};
 `;
 
 export const Title = styled.h5`

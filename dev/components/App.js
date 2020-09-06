@@ -5,14 +5,17 @@ import styled from "styled-components";
 import CargoPlanner from './CargoPlanner';
 import GlobalStyles from '../assets/global.styles';
 import { workWithLS } from '../assets/helpers';
-import { isLSExist } from '../../redux/actions'
+import { isLSExist, setParsedData } from '../../redux/actions'
 
 
-const App = ({ isExist }) => {
-    // workWithLS.setData('dataList', [1, 2, 3, 5]);
-    const isLS = !!workWithLS.getData('dataList');
-    // console.log(isLS);
-    isExist(isLS);
+const App = ({ isExist, setParsed }) => {
+    useEffect(() => {
+        const LSData = workWithLS.getData('dataList');
+        if (LSData) {
+            setParsed(JSON.parse(LSData));
+            isExist(true);
+        } else isExist(false)
+    }, [isExist, setParsed]);
 
     return (
         <Wrapper>
@@ -31,6 +34,9 @@ const Wrapper = styled.div`
 
 export default connect(
     store => ({}),
-    { isExist: isLSExist },
+    {
+        isExist: isLSExist,
+        setParsed: setParsedData,
+    },
 )(App);
 

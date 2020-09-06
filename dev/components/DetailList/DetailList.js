@@ -11,10 +11,9 @@ import {
 } from './detailListStyle';
 
 export default ({ data, isLS }) => {
-
     const Items = (
         data?.map((item, idx) => (
-            <Item key={item.id}>
+            <Item key={item.id} color={'white'}>
                 <Title>{item.name}</Title>
                 <Email>{item.email}</Email>
                 <CargoBays>
@@ -32,7 +31,7 @@ export default ({ data, isLS }) => {
                 {
                     isLS
                         ? Items
-                        : <Item>Please load the file in *.json format</Item>
+                        : <Item color={'red'}>Please load the file in *.json format</Item>
                 }
             </List>
         </DetailContainer>
