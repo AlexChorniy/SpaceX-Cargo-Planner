@@ -1,9 +1,27 @@
 import React from 'react';
 
 import {
-    NavMenue,
+    NavContainer,
+    List,
+    Item,
 } from './navStyles';
 
-export default () => (
-    <NavMenue />
-);
+export default ({ data, isLS }) => {
+    const Items = (
+        data?.map((item, idx) => (
+            <Item key={item.id}>{item.name}</Item>
+        ))
+    );
+
+    return (
+        <NavContainer>
+            <List>
+                {
+                    isLS
+                        ? Items
+                        : ''
+                }
+            </List>
+        </NavContainer>
+    )
+};

@@ -3,7 +3,10 @@ import Component from './DetailList';
 
 export default connect(
     store => (
-        { data: store.dataHandler }
+        {
+            data: store.dataHandler,
+            isLS: store.isLSExist,
+        }
     ),
     {},
 )(Component);

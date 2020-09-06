@@ -5,8 +5,8 @@ const data = (store = [], { type, payload }) => {
     const data = {
         'SET_PARSED_DATA': arr => store = [...store, ...arr],
     }
-    const result = payload ? data[type](payload) : store;
-    return result;
+    data[type] && data[type](payload);
+    return store;
 };
 
 data.propTypes = {

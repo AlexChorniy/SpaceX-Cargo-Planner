@@ -8,3 +8,12 @@ export function debounce(fn, ms) {
         timeout = setTimeout(fnCall, ms);
     };
 };
+
+export const workWithLS = {
+    getData(key) {
+        return localStorage.getItem(key);
+    },
+    setData(key, value) {
+        localStorage.setItem(key, value);
+    },
+};
