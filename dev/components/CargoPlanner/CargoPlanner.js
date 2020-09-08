@@ -1,6 +1,12 @@
 import React from 'react';
 
 import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+
+import {
     Container,
 } from './styles';
 
@@ -11,9 +17,16 @@ import DetailList from '../DetailList';
 export default () => {
     return (
         <Container>
-            <ControlPanel />
-            <NavMenue />
-            <DetailList />
+            <Router>
+                <ControlPanel />
+                <NavMenue />
+                <Switch>
+                    <Route path="/">
+                        <DetailList />
+                    </Route>
+                </Switch>
+            </Router>
+
         </Container>
     );
 };

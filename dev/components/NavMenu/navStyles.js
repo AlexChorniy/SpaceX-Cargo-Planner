@@ -6,8 +6,7 @@ grid-area: n;
 overflow: auto;
 `;
 
-export const List = styled.ul`
-`;
+export const List = styled.ul``;
 
 
 export const Item = styled.li`

@@ -1,23 +1,25 @@
 import React from 'react';
 
+import { Link } from "react-router-dom";
+
 import {
     NavContainer,
     List,
     Item,
-    Link,
+    // Link,
 } from './navStyles';
 
 export default ({ data, isLS, setLink }) => {
 
     const linkHandler = (event, item) => {
-        event.preventDefault();
+        // event.preventDefault();
         setLink(item);
     };
 
     const Items = (
         data?.map((item) => (
             <Item key={item.id} >
-                <Link href={item.name} onClick={event => linkHandler(event, item)}>
+                <Link key={item.id} to={`/${item.name}`} onClick={event => linkHandler(event, item)}>
                     {item.name}
                 </Link>
             </Item>
@@ -26,13 +28,13 @@ export default ({ data, isLS, setLink }) => {
 
     return (
         <NavContainer>
-            <List>
-                {
-                    isLS
-                        ? Items
-                        : ''
-                }
-            </List>
+            {/* <List> */}
+            {
+                isLS
+                    ? Items
+                    : ''
+            }
+            {/* </List> */}
         </NavContainer>
     )
 };
