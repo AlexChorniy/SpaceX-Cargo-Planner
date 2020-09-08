@@ -19,4 +19,12 @@ export const Item = styled.li`
     font-style: normal;
     font-size: 14px;
     color: whitesmoke;
+    
 `;
+
+export const Link = styled.a.attrs(({ href }) => ({
+    href,
+}))`
+    cursor: pointer;
+`;
+

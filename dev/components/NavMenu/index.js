@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import Component from './NavMenu'
 
+import { setLink } from '../../../redux/actions';
+
 export default connect(
     store => (
         {
@@ -8,5 +10,5 @@ export default connect(
             isLS: store.isLSExist,
         }
     ),
-    {},
+    { setLink },
 )(Component);

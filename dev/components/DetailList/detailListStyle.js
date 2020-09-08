@@ -19,23 +19,3 @@ export const Item = styled.li`
     color: whitesmoke;
     color: ${({ color }) => color || 'white'};
 `;
-
-export const Title = styled.h5`
-    margin-top: 2px;
-    margin-bottom: 2px;
-`;
-
-export const Email = styled.div`
-    margin-top: 2px;
-    margin-bottom: 2px;
-`;
-
-export const CargoBays = styled.div`
-    margin-top: 2px;
-    margin-bottom: 2px;
-`;
-
-export const CargoBoxes = styled.input`
-    margin-top: 2px;
-    margin-bottom: 2px;
-`;

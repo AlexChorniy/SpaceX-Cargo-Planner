@@ -4,12 +4,23 @@ import {
     NavContainer,
     List,
     Item,
+    Link,
 } from './navStyles';
 
-export default ({ data, isLS }) => {
+export default ({ data, isLS, setLink }) => {
+
+    const linkHandler = (event, item) => {
+        event.preventDefault();
+        setLink(item);
+    };
+
     const Items = (
         data?.map((item, idx) => (
-            <Item key={item.id}>{item.name}</Item>
+            <Item key={item.id} >
+                <Link href={item.name} onClick={event => linkHandler(event, item)}>
+                    {item.name}
+                </Link>
+            </Item>
         ))
     );
 

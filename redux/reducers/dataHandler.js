@@ -1,12 +1,27 @@
 import { shape, string } from "prop-types";
 
-const data = (store = [], { type, payload }) => {
+let storage = [];
 
-    const data = {
-        'SET_PARSED_DATA': arr => store = [...arr],
+const data = (store = [], { type, payload }) => {
+    switch (type) {
+        case 'SET_PARSED_DATA':
+            const sorted = payload.sort((a, b) => {
+                const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+                if (nameA < nameB)
+                    return -1
+                if (nameA > nameB)
+                    return 1
+                return 0;
+            })
+            const result = [...sorted];
+            storage = [...result];
+            return result;
+        case 'SET_TEXT_VALUE':
+            const findСoincidence = storage.filter(({ name }) => name.indexOf(payload) >= 0);
+            return [...findСoincidence];
+        default:
+            return store;
     }
-    data[type] && data[type](payload);
-    return store;
 };
 
 data.propTypes = {

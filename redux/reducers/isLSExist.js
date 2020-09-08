@@ -1,14 +1,12 @@
 import { bool, string } from "prop-types";
 
 const isLSExist = (store = false, { type, payload }) => {
-
-    const boolVal = {
-        'IS_LS_EXIST': val => store = val,
+    switch (type) {
+        case 'IS_LS_EXIST':
+            return payload;
+        default:
+            return store;
     }
-
-    boolVal[type] && boolVal[type](payload);
-
-    return store;
 };
 
 isLSExist.propTypes = {
