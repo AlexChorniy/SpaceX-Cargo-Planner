@@ -16,7 +16,8 @@ export default ({ data, id, index, changeItemBoxVal }) => {
 
     useEffect(() => {
         const baysAmount = boxes && (boxes.split(',').reduce((acc, num) => +acc + +num, 0) / 10);
-        setBays(Math.ceil(baysAmount));
+        const baysRound = Math.ceil(baysAmount) || 0;
+        setBays(baysRound);
     }, [id, index, data]);
 
     const boxesChangeHdr = e => {
