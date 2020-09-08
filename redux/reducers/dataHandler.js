@@ -13,9 +13,8 @@ const data = (store = [], { type, payload }) => {
                     return 1
                 return 0;
             })
-            const result = [...sorted];
-            storage = [...result];
-            return result;
+            storage = [...sorted];
+            return [...sorted];
         case 'SET_TEXT_VALUE':
             const findСoincidence = storage.filter(({ name }) => name.indexOf(payload) >= 0);
             return [...findСoincidence];

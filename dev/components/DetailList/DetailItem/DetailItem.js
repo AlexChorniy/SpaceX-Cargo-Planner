@@ -8,16 +8,24 @@ import {
     CargoBoxes,
 } from './detailItemStyle';
 
-export default ({ data, id, index }) => {
+import { debounce } from '../../../assets/helpers'
+
+export default ({ data, id, index, changeItemBoxVal }) => {
     const { name, email, id: itemId, boxes } = data[index];
     const [bays, setBays] = useState(0);
-    const [itemBoxes, setBoxes] = useState(boxes);
 
     useEffect(() => {
-        const baysAmount = (itemBoxes.split(',').reduce((acc, num) => +acc + +num, 0) / 10);
+        const baysAmount = boxes && (boxes.split(',').reduce((acc, num) => +acc + +num, 0) / 10);
         setBays(Math.ceil(baysAmount));
-    }, [id, index]);
+    }, [id, index, data]);
 
+    const boxesChangeHdr = e => {
+        const newBoxVal = e.target.value;
+
+        debBoxesHandler({ value: newBoxVal, id });
+    }
+
+    const debBoxesHandler = debounce(changeItemBoxVal, 300);
 
     return (
         <Item color={'white'}>
@@ -27,7 +35,7 @@ export default ({ data, id, index }) => {
                 Number of required
                 cargo bays is {bays}
             </CargoBays>
-            <CargoBoxes defaultValue={itemBoxes} />
+            <CargoBoxes onChange={boxesChangeHdr} defaultValue={boxes} />
         </Item>
     )
 };

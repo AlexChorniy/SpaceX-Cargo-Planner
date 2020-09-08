@@ -4,3 +4,4 @@ export const setParsedData = array => ({ type: 'SET_PARSED_DATA', payload: array
 export const isLSExist = bool => ({ type: 'IS_LS_EXIST', payload: bool });
 export const setLink = obj => ({ type: 'SET_LINK', payload: obj });
 export const setTextValue = string => ({ type: 'SET_TEXT_VALUE', payload: string });
+export const changeItemBoxVal = obj => ({ type: 'CHANGE_ITEM_BOX_VALUE', payload: obj });

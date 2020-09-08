@@ -15,7 +15,7 @@ export default ({ data, isLS, setLink }) => {
     };
 
     const Items = (
-        data?.map((item, idx) => (
+        data?.map((item) => (
             <Item key={item.id} >
                 <Link href={item.name} onClick={event => linkHandler(event, item)}>
                     {item.name}
