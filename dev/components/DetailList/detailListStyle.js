@@ -18,4 +18,5 @@ export const Item = styled.li`
     font-size: 14px;
     color: whitesmoke;
     color: ${({ color }) => color || 'white'};
+    word-wrap: normal;
 `;

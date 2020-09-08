@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Link } from "react-router-dom";
-
 import {
     NavContainer,
     List,
     Item,
+    StyledLink,
 } from './navStyles';
 
 export default ({ data, isLS, setLink }) => {
@@ -14,9 +13,9 @@ export default ({ data, isLS, setLink }) => {
         data?.map((item) => (
             <List key={item.id}>
                 <Item  >
-                    <Link key={item.id} to={`/${item.name}`} onClick={event => setLink(item)}>
+                    <StyledLink key={item.id} to={`/${item.name}`} onClick={event => setLink(item)}>
                         {item.name}
-                    </Link>
+                    </StyledLink>
                 </Item>
             </List>
         ))

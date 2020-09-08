@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ControlPanel = styled.div`
-    background-color: teal;
+    background-color: #537072;
     grid-area: c;
     display: flex;
     justify-content: space-between;
@@ -13,12 +13,14 @@ export const ControlPanel = styled.div`
     font-style: normal;
     font-size: 14px;
     position: relative;
+    color: #F1F1F2;
 `;
 
 export const Banner = styled.div`
     width: 25%;
     font-weight: bold;
     text-align: center;
+    font-size: 21px;
 `;
 
 export const SearchContainer = styled.div`
@@ -55,6 +57,12 @@ export const TextInput = styled.input.attrs(() => ({
 
 export const Buttons = styled.div`
     width: 20%;
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    @media (max-width: 707px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;

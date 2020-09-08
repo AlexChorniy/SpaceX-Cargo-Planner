@@ -6,7 +6,7 @@ export const LoadButton = styled.label`
     text-align: center;
     line-height: 30px;
     font-weight: bold;
-    background-color: rosybrown;
+    background-color: #E1B16A;
     border-radius: 5px;
 `;
 
