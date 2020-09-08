@@ -1,7 +1,7 @@
 import React from 'react';
 import { func } from "prop-types";
 
-import withLSCtrl from '../../hoc/withLSCtrl';
+import withLSCtrl from '@hoc/withLSCtrl';
 
 import { LoadButton, UploadElement } from './loadButStyles';
 

@@ -8,7 +8,7 @@ import {
     CargoBoxes,
 } from './detailItemStyle';
 
-import { debounce } from '../../../assets/helpers'
+import { debounce } from '@assets/helpers'
 
 export default ({ data, id, index, changeItemBoxVal }) => {
     const { name, email, id: itemId, boxes } = data[index];

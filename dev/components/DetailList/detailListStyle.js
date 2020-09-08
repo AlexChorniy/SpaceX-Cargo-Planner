@@ -15,7 +15,7 @@ export const Item = styled.li`
     font-family: OpenSansItalic;
     font-weight: normal;
     font-style: normal;
-    font-size: 14px;
+    font-size: 18px;
     color: whitesmoke;
     color: ${({ color }) => color || 'white'};
     word-wrap: normal;

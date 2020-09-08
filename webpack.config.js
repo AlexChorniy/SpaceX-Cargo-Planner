@@ -33,6 +33,8 @@ module.exports = {
         alias: {
             '@comp': path.resolve(__dirname, 'dev/components'),
             '@assets': path.resolve(__dirname, 'dev/assets'),
+            '@redux': path.resolve(__dirname, 'redux'),
+            '@hoc': path.resolve(__dirname, 'dev/hoc'),
         }
     },
     plugins: [

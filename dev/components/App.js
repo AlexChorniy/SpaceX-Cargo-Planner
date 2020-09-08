@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import styled from "styled-components";
 
 import CargoPlanner from './CargoPlanner';
-import GlobalStyles from '../assets/global.styles';
-import { workWithLS } from '../assets/helpers';
-import { isLSExist, setParsedData } from '../../redux/actions'
+import GlobalStyles from '@assets/global.styles';
+import { workWithLS } from '@assets/helpers';
+import { isLSExist, setParsedData } from '@redux/actions'
 
 
 const App = ({ isExist, setParsed }) => {

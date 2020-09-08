@@ -1,6 +1,6 @@
 import React from 'react';
 import { func } from "prop-types";
-import { workWithLS } from '../assets/helpers';
+import { workWithLS } from '@assets/helpers';
 const { setData, removeData } = workWithLS;
 
 let parsedData = [];

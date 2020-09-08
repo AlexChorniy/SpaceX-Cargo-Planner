@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Component from './ControlPanel';
-import { setTextValue } from '../../../redux/actions';
+import { setTextValue } from '@redux/actions';
 
 export default connect(
     store => ({}),

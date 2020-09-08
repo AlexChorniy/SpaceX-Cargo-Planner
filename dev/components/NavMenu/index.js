@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Component from './NavMenu'
 
-import { setLink } from '../../../redux/actions';
+import { setLink } from '@redux/actions';
 
 export default connect(
     store => (

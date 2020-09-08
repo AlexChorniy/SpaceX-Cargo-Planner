@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoadButton from '../LoadButton';
 import SaveButton from '../SaveButton';
-import { debounce } from '../../assets/helpers';
+import { debounce } from '@assets/helpers';
 
 import {
     ControlPanel,
