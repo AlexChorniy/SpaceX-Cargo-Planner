@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Component from './DetailItems';
+import Component from './DetailItem';
 
 export default connect(
     store => (
