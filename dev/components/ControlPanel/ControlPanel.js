@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
 import LoadButton from '../LoadButton';
 import SaveButton from '../SaveButton';
+import Imput from '../Input';
+
 import { debounce } from '@assets/helpers';
 
 import {
@@ -8,8 +11,6 @@ import {
     Banner,
     SearchContainer,
     SearchIcon,
-    InputLabel,
-    TextInput,
     Buttons,
 } from './controlPanelStyles';
 
@@ -29,15 +30,7 @@ const CtrlPanel = ({ setTextValue }) => {
             <Banner>Cargo Planner</Banner>
             <SearchContainer>
                 <SearchIcon />
-                <InputLabel htmlFor='staff' >
-                    {text}
-                    <TextInput
-                        type="text"
-                        onChange={onChangeHandler}
-                        name='staff'
-                        id="staff"
-                    />
-                </InputLabel>
+                <Imput text={text} onChangeHandler={onChangeHandler} />
             </SearchContainer>
             <Buttons>
                 <LoadButton />

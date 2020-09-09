@@ -30,4 +30,5 @@ export const CargoBays = styled.div`
 export const CargoBoxes = styled.input`
     margin-top: 2px;
     margin-bottom: 2px;
+    width: 65%;
 `;

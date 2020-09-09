@@ -22,7 +22,6 @@ export default ({ data, id, index, changeItemBoxVal }) => {
 
     const boxesChangeHdr = e => {
         const newBoxVal = e.target.value;
-
         debBoxesHandler({ value: newBoxVal, id });
     }
 
