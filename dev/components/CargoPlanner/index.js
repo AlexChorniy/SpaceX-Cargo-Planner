@@ -1,2 +1,3 @@
-import Component from './CargoPlanner'
+import Component from './CargoPlanner';
+
 export default Component;

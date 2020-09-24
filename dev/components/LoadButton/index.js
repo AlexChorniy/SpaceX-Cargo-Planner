@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 
-import Component from './LoadButton';
 import { isLSExist } from '@redux/actions';
-
+import Component from './LoadButton';
 
 export default connect(
-    store => ({}),
+    () => ({}),
     { isLSExist },
 )(Component);
