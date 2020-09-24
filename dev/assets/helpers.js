@@ -18,5 +18,5 @@ export const workWithLS = {
     },
     removeData(key) {
         localStorage.removeItem(key);
-    }
+    },
 };

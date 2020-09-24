@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -16,13 +16,13 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: '[name].[contenthash].js',
-        publicPath: '/'
+        publicPath: '/',
     },
     mode: NODE_ENV,
     optimization: {
         splitChunks: {
-            chunks: 'all'
-        }
+            chunks: 'all',
+        },
     },
     devServer: {
         port: 8080,
@@ -35,11 +35,11 @@ module.exports = {
             '@assets': path.resolve(__dirname, 'dev/assets'),
             '@redux': path.resolve(__dirname, 'redux'),
             '@hoc': path.resolve(__dirname, 'dev/hoc'),
-        }
+        },
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './index.html',
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
@@ -57,9 +57,9 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react']
-                    }
-                }
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                    },
+                },
             }, {
                 test: /\.(sa|sc|c)ss$/,
                 use: [{
@@ -69,15 +69,15 @@ module.exports = {
                 }, {
                     loader: 'postcss-loader', // Run postcss actions
                     options: {
-                        plugins: function () { // postcss plugins, can be exported to postcss.config.js
-                            return [
-                                require('autoprefixer')
-                            ];
-                        }
-                    }
+                        // plugins() { // postcss plugins, can be exported to postcss.config.js
+                        //     return [
+                        //         require('autoprefixer'),
+                        //     ];
+                        // },
+                    },
                 }, {
-                    loader: 'sass-loader' // compiles Sass to CSS
-                }]
+                    loader: 'sass-loader', // compiles Sass to CSS
+                }],
             }, {
                 test: /\.(png|jpe?g|gif)$/,
                 use: [
@@ -93,7 +93,7 @@ module.exports = {
                 loader: 'svg-url-loader',
                 query: {
                     limit: '10000',
-                }
+                },
             }, {
                 test: /\.(ttf|TTF|woff|woff2|eot)$/,
                 use: [
@@ -104,6 +104,6 @@ module.exports = {
                         },
                     },
                 ],
-            },]
-    }
+            }],
+    },
 };

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const NavContainer = styled.div`
 background-color: #78A5A3;
@@ -9,7 +9,6 @@ overflow: auto;
 `;
 
 export const List = styled.ul``;
-
 
 export const Item = styled.li`
     margin-top: 5px;

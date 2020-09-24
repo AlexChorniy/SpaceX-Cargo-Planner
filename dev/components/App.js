@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import CargoPlanner from './CargoPlanner';
 import GlobalStyles from '@assets/global.styles';
 import { workWithLS } from '@assets/helpers';
-import { isLSExist, setParsedData } from '@redux/actions'
-
+import { isLSExist, setParsedData } from '@redux/actions';
+import CargoPlanner from './CargoPlanner';
 
 const App = ({ isExist, setParsed }) => {
     useEffect(() => {
@@ -14,7 +13,7 @@ const App = ({ isExist, setParsed }) => {
         if (LSData) {
             setParsed(JSON.parse(LSData));
             isExist(true);
-        } else isExist(false)
+        } else isExist(false);
     }, [isExist, setParsed]);
 
     return (
@@ -22,7 +21,7 @@ const App = ({ isExist, setParsed }) => {
             <CargoPlanner />
             <GlobalStyles />
         </Wrapper>
-    )
+    );
 };
 
 const Wrapper = styled.div`
@@ -33,10 +32,9 @@ const Wrapper = styled.div`
 `;
 
 export default connect(
-    store => ({}),
+    () => ({}),
     {
         isExist: isLSExist,
         setParsed: setParsedData,
     },
 )(App);
-

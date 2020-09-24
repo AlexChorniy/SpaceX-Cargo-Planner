@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
+import { debounce } from '@assets/helpers';
 import LoadButton from '../LoadButton';
 import SaveButton from '../SaveButton';
 import Imput from '../Input';
-
-import { debounce } from '@assets/helpers';
 
 import {
     ControlPanel,
@@ -17,13 +16,13 @@ import {
 const CtrlPanel = ({ setTextValue }) => {
     const [text, setText] = useState('text');
 
-    const onChangeHandler = event => {
+    const debounceOnChange = debounce(setTextValue, 300);
+
+    const onChangeHandler = (event) => {
         const val = event.target.value;
         setText(val);
         debounceOnChange(val);
     };
-
-    let debounceOnChange = debounce(setTextValue, 300);
 
     return (
         <ControlPanel>
@@ -37,7 +36,7 @@ const CtrlPanel = ({ setTextValue }) => {
                 <SaveButton />
             </Buttons>
         </ControlPanel>
-    )
+    );
 };
 
 export default CtrlPanel;

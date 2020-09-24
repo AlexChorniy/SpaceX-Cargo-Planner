@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import Component from './SaveButton';
 import { setParsedData, isLSExist } from '@redux/actions';
+import Component from './SaveButton';
 
 export default connect(
-    store => (
+    () => (
         {}
     ),
     { setParsedData, isLSExist },

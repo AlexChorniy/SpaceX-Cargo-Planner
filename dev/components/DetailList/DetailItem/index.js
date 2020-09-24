@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
+import { changeItemBoxVal } from '@redux/actions';
 import Component from './DetailItem';
 
-import { changeItemBoxVal } from '@redux/actions'
-
 export default connect(
-    store => (
+    (store) => (
         {
             data: store.detailList,
         }

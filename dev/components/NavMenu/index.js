@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import Component from './NavMenu'
-
 import { setLink } from '@redux/actions';
+import Component from './NavMenu';
 
 export default connect(
-    store => (
+    (store) => (
         {
             data: store.dataHandler,
             isLS: store.isLSExist,

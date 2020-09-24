@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
+// eslint-disable-next-line import/prefer-default-export
 export const SaveButton = styled.div`
 height: 30px;
 width: 60px;
